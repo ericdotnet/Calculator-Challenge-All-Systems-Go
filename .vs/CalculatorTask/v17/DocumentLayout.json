@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Task\\CalculatorTask\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E36E465F-D71A-47BF-8A68-D7AB3E901AD9}|CalculatorEngineTest\\CalculatorEngineTest.csproj|c:\\task\\calculatortask\\calculatorenginetest\\calculatorenginetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E36E465F-D71A-47BF-8A68-D7AB3E901AD9}|CalculatorEngineTest\\CalculatorEngineTest.csproj|solutionrelative:calculatorenginetest\\calculatorenginetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5F1460B6-3784-44A9-8E2A-96D5C95F9E66}|CalculatorTask\\CalculatorTask.csproj|c:\\task\\calculatortask\\calculatortask\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F1460B6-3784-44A9-8E2A-96D5C95F9E66}|CalculatorTask\\CalculatorTask.csproj|solutionrelative:calculatortask\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CalculatorEngineTests.cs",
+              "DocumentMoniker": "C:\\Task\\CalculatorTask\\CalculatorEngineTest\\CalculatorEngineTests.cs",
+              "RelativeDocumentMoniker": "CalculatorEngineTest\\CalculatorEngineTests.cs",
+              "ToolTip": "C:\\Task\\CalculatorTask\\CalculatorEngineTest\\CalculatorEngineTests.cs*",
+              "RelativeToolTip": "CalculatorEngineTest\\CalculatorEngineTests.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAkwAwAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T23:23:30.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Task\\CalculatorTask\\CalculatorTask\\Program.cs",
               "RelativeDocumentMoniker": "CalculatorTask\\Program.cs",
@@ -35,13 +52,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CalculatorEngine.cs",
               "DocumentMoniker": "C:\\Task\\CalculatorTask\\CalculatorTask\\CalculatorEngine.cs",
               "RelativeDocumentMoniker": "CalculatorTask\\CalculatorEngine.cs",
               "ToolTip": "C:\\Task\\CalculatorTask\\CalculatorTask\\CalculatorEngine.cs",
               "RelativeToolTip": "CalculatorTask\\CalculatorEngine.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFYAAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-05T22:36:05.336Z",
               "EditorCaption": ""
