@@ -1,0 +1,15 @@
+C:\Task\CalculatorTask\CalculatorTask\bin\Debug\net8.0\CalculatorTask.exe
+C:\Task\CalculatorTask\CalculatorTask\bin\Debug\net8.0\CalculatorTask.deps.json
+C:\Task\CalculatorTask\CalculatorTask\bin\Debug\net8.0\CalculatorTask.runtimeconfig.json
+C:\Task\CalculatorTask\CalculatorTask\bin\Debug\net8.0\CalculatorTask.dll
+C:\Task\CalculatorTask\CalculatorTask\bin\Debug\net8.0\CalculatorTask.pdb
+C:\Task\CalculatorTask\CalculatorTask\obj\Debug\net8.0\CalculatorTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Task\CalculatorTask\CalculatorTask\obj\Debug\net8.0\CalculatorTask.AssemblyInfoInputs.cache
+C:\Task\CalculatorTask\CalculatorTask\obj\Debug\net8.0\CalculatorTask.AssemblyInfo.cs
+C:\Task\CalculatorTask\CalculatorTask\obj\Debug\net8.0\CalculatorTask.csproj.CoreCompileInputs.cache
+C:\Task\CalculatorTask\CalculatorTask\obj\Debug\net8.0\CalculatorTask.sourcelink.json
+C:\Task\CalculatorTask\CalculatorTask\obj\Debug\net8.0\CalculatorTask.dll
+C:\Task\CalculatorTask\CalculatorTask\obj\Debug\net8.0\refint\CalculatorTask.dll
+C:\Task\CalculatorTask\CalculatorTask\obj\Debug\net8.0\CalculatorTask.pdb
+C:\Task\CalculatorTask\CalculatorTask\obj\Debug\net8.0\CalculatorTask.genruntimeconfig.cache
+C:\Task\CalculatorTask\CalculatorTask\obj\Debug\net8.0\ref\CalculatorTask.dll
