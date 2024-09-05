@@ -9,84 +9,110 @@ namespace CalculatorTask
 {
     public class CalculatorEngine
     {
-        public string Calculate(string input)
-        {
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                return "0";
-            }
+            private bool _limitTwoNumbers = true;
 
-            // Check for custom delimiter
-            if (input.StartsWith("//"))
+            public string Calculate(string input)
             {
-                return ProcessCustomDelimiter(input);
-            }
-
-            // Process default delimiters
-            string[] delimiters = { ",", "\n" };
-            string numbers = input;
-
-            foreach (string delimiter in delimiters)
-            {
-                if (numbers.Contains(delimiter))
+                if (string.IsNullOrWhiteSpace(input))
                 {
-                    numbers = numbers.Replace(delimiter, ",");
+                    return "0";
                 }
+
+                // Check for custom delimiter
+                if (input.StartsWith("//"))
+                {
+                    return ProcessCustomDelimiter(input);
+                }
+
+                // Process default delimiters (comma and newline)
+                string[] delimiters = { ",", "\n" };
+                string numbers = input;
+
+                foreach (string delimiter in delimiters)
+                {
+                    if (numbers.Contains(delimiter))
+                    {
+                        numbers = numbers.Replace(delimiter, ",");
+                    }
+                }
+
+                return ProcessNumbers(numbers);
             }
 
-            return ProcessNumbers(numbers);
-        }
-
-        public string ProcessCustomDelimiter(string input)
-        {
-            var delimiterMatch = Regex.Match(input, @"^//(\[.*?\])\n");
-            if (!delimiterMatch.Success)
+            public string ProcessCustomDelimiter(string input)
             {
-                throw new InvalidOperationException("Invalid custom delimiter format.");
+                var delimiterMatch = Regex.Match(input, @"^//(\[.*?\]|.)\n");
+                if (!delimiterMatch.Success)
+                {
+                    throw new InvalidOperationException("Invalid custom delimiter format.");
+                }
+
+                string delimitersPart = delimiterMatch.Groups[1].Value;
+                string numbersPart = input.Substring(delimiterMatch.Length);
+
+                var delimiters = new List<string>();
+
+                if (delimitersPart.StartsWith("[") && delimitersPart.EndsWith("]"))
+                {
+                    // Extract multiple delimiters or delimiters of arbitrary length
+                    foreach (Match match in Regex.Matches(delimitersPart, @"\[([^\]]+?)\]"))
+                    {
+                        delimiters.Add(match.Groups[1].Value);
+                    }
+                }
+                else
+                {
+                    // Single character delimiter
+                    delimiters.Add(delimitersPart);
+                }
+
+                // Replace custom delimiters with a comma
+                foreach (var delimiter in delimiters)
+                {
+                    numbersPart = numbersPart.Replace(delimiter, ",");
+                }
+
+                return ProcessNumbers(numbersPart);
             }
 
-            string delimitersPart = delimiterMatch.Groups[1].Value;
-            string numbersPart = input.Substring(delimiterMatch.Length);
-
-            // Extract delimiters
-            var delimiters = new List<string>();
-            foreach (Match match in Regex.Matches(delimitersPart, @"\[([^\]]+?)\]"))
+            private string ProcessNumbers(string numbers)
             {
-                delimiters.Add(match.Groups[1].Value);
-            }
-
-            // Replace custom delimiters with comma
-            foreach (var delimiter in delimiters)
-            {
-                numbersPart = numbersPart.Replace(delimiter, ",");
-            }
-
-            return ProcessNumbers(numbersPart);
-        }
-
-        private string ProcessNumbers(string numbers)
-        {
-            var numList = numbers.Split(',')
-                                  .Select(s => s.Trim())
-                                  .Select(s =>
-                                  {
-                                      if (int.TryParse(s, out int result))
+                // Split the numbers by comma
+                var numList = numbers.Split(',')
+                                      .Select(s => s.Trim())
+                                      .Select(s =>
                                       {
-                                          return result > 1000 ? 0 : result;
-                                      }
-                                      return 0;
-                                  })
-                                  .ToList();
+                                          if (int.TryParse(s, out int result))
+                                          {
+                                              return result > 1000 ? 0 : result;
+                                          }
+                                          return 0; // Invalid numbers converted to 0
+                                      })
+                                      .ToList();
 
-            var negatives = numList.Where(n => n < 0).ToList();
-            if (negatives.Any())
-            {
-                throw new InvalidOperationException("Negative numbers not allowed: " + string.Join(", ", negatives));
+                // Handle negative numbers
+                var negatives = numList.Where(n => n < 0).ToList();
+                if (negatives.Any())
+                {
+                    throw new InvalidOperationException("Negative numbers not allowed: " + string.Join(", ", negatives));
+                }
+
+                // Initial requirement: limit to 2 numbers
+                if (_limitTwoNumbers && numList.Count > 2)
+                {
+                    throw new InvalidOperationException("A maximum of 2 numbers is allowed.");
+                }
+
+                // Calculate the sum of valid numbers
+                int sum = numList.Sum();
+                return sum.ToString();
             }
 
-            int sum = numList.Sum();
-            return sum.ToString();
-        }
+            public void RemoveNumberLimit()
+            {
+                _limitTwoNumbers = false;
+            }
+        
     }
 }
 
