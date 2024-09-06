@@ -1,4 +1,4 @@
-# CalculatorTask
+# Calculator Challenge
 
 This project is a calculator engine implemented in C# that supports a variety of mathematical operations with flexible delimiters. It includes comprehensive unit tests to ensure all functionalities are thoroughly tested.
 
